@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://byp3fq4tjro1n"]
+
+[ext_resource type="PackedScene" uid="uid://bhbhf8gfj71qd" path="res://models/dungeon_assets/building/floor_wood.glb" id="1_bgrey"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_12ume"]
+points = PackedVector3Array(-2, -0.1, -2, -2, -0.1, 2, -2, 0.0249951, -2, 2, -0.1, -2, -2, 0.0249951, 2, 2, -0.1, 2, -2, 0.05, -1.47533, -1.97533, 0.05, -1.97533, 2, 0.0249951, -2, -2, 0.05, 1.97494, 2, 0.0249951, 2, 1.97494, 0.05, -1.97533, 2, 0.05, -1.47533, 2, 0.05, 1.97494)
+
+[node name="floor_wood" type="StaticBody3D"]
+
+[node name="floor_wood" parent="." instance=ExtResource("1_bgrey")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_12ume")
+
+[editable path="floor_wood"]

@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw23cvak5f76g"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_kdu1v"]
+[ext_resource type="PackedScene" uid="uid://gudub1i8e4vq" path="res://scenes/utilities/dungeon/wall.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://d0gymb631f2ru" path="res://scenes/utilities/dungeon/wall_doorway.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://y6p50khfak3o" path="res://scenes/utilities/dungeon/wall_half_endcap.tscn" id="4_85g3d"]
+[ext_resource type="PackedScene" uid="uid://lmwf04isinrb" path="res://scenes/utilities/dungeon/wall_shelved.tscn" id="5_choun"]
+[ext_resource type="PackedScene" uid="uid://btmsgb1nhlr7p" path="res://scenes/utilities/dungeon/wall_tsplit.tscn" id="6_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://wq767rj6xhjk" path="res://scenes/utilities/dungeon/wall_window_closed.tscn" id="7_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://m7dvatmxd47p" path="res://scenes/utilities/dungeon/wall_corner.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://bwgieo30652c4" path="res://scenes/utilities/dungeon/ceiling.tscn" id="9_85g3d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mk2ea"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_0n7d7"]
+sky_material = SubResource("ProceduralSkyMaterial_mk2ea")
+
+[sub_resource type="Environment" id="Environment_wghih"]
+background_mode = 2
+sky = SubResource("Sky_0n7d7")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.430511, 0.708328, -0.559403, 0, 0.619779, 0.784776, 0.902585, 0.337855, -0.266822, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wghih")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(40, 1, 40)
+metadata/_edit_lock_ = true
+
+[node name="ProtoController" parent="." instance=ExtResource("1_kdu1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1, 0.6, -1.5)
+
+[node name="wall2" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0.5, -7.2)
+
+[node name="wall5" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7, 0.5, -3.2)
+
+[node name="wall6" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7, 0.5, 0.8)
+
+[node name="wall11" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7, 0.5, 4.8)
+
+[node name="wall3" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.5, -7.2)
+
+[node name="wall8" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.5, -7.2)
+
+[node name="wall9" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 4.5, -7.2)
+
+[node name="wall10" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 4.5, -7.2)
+
+[node name="wall7" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0.5, 8.8)
+
+[node name="wall4" parent="." instance=ExtResource("2_o6xl0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.7, 0.5, -3.2)
+
+[node name="wall_doorway" parent="." instance=ExtResource("3_tipki")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.7, 0.5, 4.8)
+
+[node name="wall_doorway_door" parent="wall_doorway/wall_doorway2/wall_doorway" index="0"]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -0.820099, 0, -4.76837e-07)
+
+[node name="wall_half_endcap2" parent="." instance=ExtResource("4_85g3d")]
+transform = Transform3D(-1, 0, 5.32375e-05, 0, 1, 0, -5.32375e-05, 0, -1, -4.7, 4.5, -7.2)
+
+[node name="wall_shelved" parent="." instance=ExtResource("5_choun")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.7, 0.5, 0.8)
+
+[node name="wall_tsplit" parent="." instance=ExtResource("6_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.5, -7.2)
+
+[node name="wall_tsplit2" parent="." instance=ExtResource("6_ya4ey")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.7, 0.5, 8.8)
+
+[node name="wall_window_closed" parent="." instance=ExtResource("7_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 0.5, -7.3)
+
+[node name="wall_corner" parent="." instance=ExtResource("8_tipki")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7, 0.5, -7.2)
+
+[node name="wall_corner2" parent="." instance=ExtResource("8_tipki")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.7, 0.5, 8.8)
+
+[node name="ceiling" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -10.8, 4.6, 6.8)
+
+[node name="ceiling2" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -10.8, 4.6, 2.8)
+
+[node name="ceiling3" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -10.8, 4.6, -1.2)
+
+[node name="ceiling4" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -10.8, 4.6, -5.2)
+
+[node name="ceiling5" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -6.8, 4.6, 6.8)
+
+[node name="ceiling6" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -6.8, 4.6, 2.8)
+
+[node name="ceiling7" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -6.8, 4.6, -1.2)
+
+[node name="ceiling8" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -6.8, 4.6, -5.2)
+
+[editable path="wall_doorway"]
+[editable path="wall_doorway/wall_doorway2"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7xsu8qyg5ims"]
+
+[ext_resource type="PackedScene" uid="uid://d3k2113pyqgaj" path="res://models/dungeon_assets/props/torch_mounted.glb" id="1_g0nr6"]
+
+[node name="torch" type="Node3D"]
+
+[node name="torch_mounted2" parent="." instance=ExtResource("1_g0nr6")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.3)
+light_color = Color(1, 0.345098, 0.121569, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 20.0

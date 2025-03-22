@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhn8blk8rxatd"]
+
+[ext_resource type="PackedScene" uid="uid://bxemeqptkb3h5" path="res://models/dungeon_assets/props/banner_mounted.glb" id="1_d0rh3"]
+
+[node name="banner_mounted" type="Node3D"]
+
+[node name="banner_mounted" parent="." instance=ExtResource("1_d0rh3")]

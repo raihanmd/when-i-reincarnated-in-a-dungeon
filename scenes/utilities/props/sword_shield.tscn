@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://byo8a3dea5ewi"]
+
+[ext_resource type="PackedScene" uid="uid://d3wb3b7cld2jh" path="res://models/dungeon_assets/props/sword_shield.glb" id="1_30x1u"]
+
+[node name="sword_shield" type="Node3D"]
+
+[node name="sword_shield" parent="." instance=ExtResource("1_30x1u")]

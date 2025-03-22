@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d16hiwa8nbmth"]
+
+[ext_resource type="PackedScene" uid="uid://b1t8p3jqfxowc" path="res://models/dungeon_assets/props/candles.glb" id="1_s7am1"]
+
+[node name="candles" type="Node3D"]
+
+[node name="candles" parent="." instance=ExtResource("1_s7am1")]
